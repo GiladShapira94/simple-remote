@@ -1,0 +1,27 @@
+kind: project
+metadata:
+  name: tsaa-ap-git-test
+  created: '2024-06-10T07:55:01.817000'
+spec:
+  functions:
+  - url: func.py
+    name: test-func
+    kind: job
+    image: mlrun/mlrun:1.6.2
+    handler: func
+    with_repo: true
+  workflows:
+  - path: workflow.py
+    name: main
+  artifacts: []
+  conda: ''
+  source: git://github.com/GiladShapira94/simple-remote.git
+  load_source_on_run: true
+  desired_state: online
+  owner: shapira
+  build:
+    commands: []
+    requirements: []
+  custom_packagers: []
+status:
+  state: online
